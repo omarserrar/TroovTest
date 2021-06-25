@@ -2,6 +2,9 @@
   "InscriptionForm": {
     "description": "Auto imported from components/InscriptionForm.vue"
   },
+  "ListeObjet": {
+    "description": "Auto imported from components/ListeObjet.vue"
+  },
   "LoginForm": {
     "description": "Auto imported from components/LoginForm.vue"
   },
@@ -10,5 +13,8 @@
   },
   "Logout": {
     "description": "Auto imported from components/Logout.vue"
+  },
+  "Objet": {
+    "description": "Auto imported from components/Objet.vue"
   }
 }
