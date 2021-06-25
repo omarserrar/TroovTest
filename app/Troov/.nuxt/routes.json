@@ -1,0 +1,16 @@
+[
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/home/omar/Troov/TroovTest/app/Troov/pages/login.vue",
+    "chunkName": "pages/login",
+    "_name": "_36d9918c"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/omar/Troov/TroovTest/app/Troov/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_6d31ee75"
+  }
+]

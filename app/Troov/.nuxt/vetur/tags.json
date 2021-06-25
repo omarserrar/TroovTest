@@ -1,0 +1,11 @@
+{
+  "LoginForm": {
+    "description": "Auto imported from components/LoginForm.vue"
+  },
+  "Logo": {
+    "description": "Auto imported from components/Logo.vue"
+  },
+  "Logout": {
+    "description": "Auto imported from components/Logout.vue"
+  }
+}
