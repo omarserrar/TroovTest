@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt')
 const bearerToken = require('express-bearer-token');
 const app = express()
 const User = require('./models/User.js');
+const ObjetController = require('./controllers/ObjetController.js')
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({
@@ -37,7 +38,20 @@ app.post('/api/auth/logout', (req, res) => {
 })  
 app.post('/api/auth/signup', (req, res) => {
   Auth.signup(req, res);
-})  
+})
+app.post('/api/objet/add', (req, res) => {
+  console.log("Here")
+  Auth.doIfConnected(req, res, ObjetController.ajouterObjet)
+})
+app.post('/api/objet/edit', (req, res) => {
+  Auth.doIfConnected(req, res, ObjetController.modifierObjet)
+}) 
+app.post('/api/objet/delete', (req, res) => {
+  Auth.doIfConnected(req, res, ObjetController.supprimerObjet)
+})
+app.get('/api/objet/list', (req, res) => {
+  Auth.doIfConnected(req, res, ObjetController.listeObjet)
+}) 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
