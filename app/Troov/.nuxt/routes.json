@@ -1,10 +1,10 @@
 [
   {
-    "name": "login",
-    "path": "/login",
-    "component": "/home/omar/Troov/TroovTest/app/Troov/pages/login.vue",
-    "chunkName": "pages/login",
-    "_name": "_36d9918c"
+    "name": "auth",
+    "path": "/auth",
+    "component": "/home/omar/Troov/TroovTest/app/Troov/pages/auth.vue",
+    "chunkName": "pages/auth",
+    "_name": "_7b6982d5"
   },
   {
     "name": "index",

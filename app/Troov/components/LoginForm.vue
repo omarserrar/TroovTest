@@ -27,7 +27,7 @@
     </b-form-group>
 
     <b-button type="submit" variant="primary">
-      Login
+      Connexion
     </b-button>
   </b-form>
 </template>

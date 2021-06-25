@@ -35,6 +35,9 @@ app.get('/api/auth/user', (req, res) => {
 app.post('/api/auth/logout', (req, res) => {
   res.json({logout: true})
 })  
+app.post('/api/auth/signup', (req, res) => {
+  Auth.signup(req, res);
+})  
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })

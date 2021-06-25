@@ -1,4 +1,7 @@
 {
+  "InscriptionForm": {
+    "description": "Auto imported from components/InscriptionForm.vue"
+  },
   "LoginForm": {
     "description": "Auto imported from components/LoginForm.vue"
   },
