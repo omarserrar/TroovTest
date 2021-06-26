@@ -20,13 +20,14 @@
       <b-form-input
         id="password"
         v-model="form.password"
+        minLength="6"
         type="password"
         placeholder="Enter password"
         required
       />
     </b-form-group>
 
-    <b-button type="submit" variant="primary">
+    <b-button type="submit" variant="primary" class="bouton primary" pill>
       Connexion
     </b-button>
   </b-form>

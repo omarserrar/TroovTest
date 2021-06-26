@@ -12,6 +12,7 @@
         id="nom"
         v-model="form.nom"
         type="text"
+        minLength="3"
         placeholder="Entrez votre nom: "
         required
       />
@@ -36,12 +37,13 @@
         id="password"
         v-model="form.password"
         type="password"
+        minLength="6"
         placeholder="Entrez votre mot de passe"
         required
       />
     </b-form-group>
 
-    <b-button type="submit" variant="primary">
+    <b-button type="submit" variant="primary" class="bouton primary" pill>
       S'inscrire
     </b-button>
   </b-form>

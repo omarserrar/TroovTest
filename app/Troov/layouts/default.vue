@@ -1,6 +1,5 @@
 <template>
   <div>
-    <navbar></navbar>
     <Nuxt />
   </div>
 </template>
@@ -69,5 +68,16 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+.bouton{
+  background-color: transparent;
+  border: 2px solid;
+  font-weight: bold;
+}
+.primary{
+  color: #024d8e;
+}
+.danger{
+  color: #bb0000;
 }
 </style>

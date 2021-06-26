@@ -16,7 +16,7 @@ export default function (ctx, inject) {
   "fullPathRedirect": false,
   "watchLoggedIn": true,
   "redirect": {
-    "login": "/login",
+    "login": "/auth",
     "logout": "/",
     "home": "/",
     "callback": "/login"

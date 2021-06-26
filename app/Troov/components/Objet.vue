@@ -2,19 +2,22 @@
   <span class="d-flex justify-content-between align-items-center" v-if="!edit">
     <span>{{ nom }}</span>
     <span>
-      <a href="#" @click="supprimer">Supprimer</a>
-      <a href="#" @click="activerModification">Modifier</a>
+
+      <b-button @click="activerModification" variant="primary" class="bouton primary" pill>Modifier</b-button>
+      <b-button @click="supprimer" variant="danger" class="bouton danger" pill>Supprimer</b-button>
     </span>
   </span>
-  <b-form inline v-else class="d-flex justify-content-between align-items-center">
+  <b-form inline v-else class="d-flex justify-content-between align-items-center" @submit="enregistrerModification">
         <b-form-input
           id="inline-form-input-name"
           v-model="newName"
+          minlength="3"
+          maxlength="255"
           class="mb-2 mr-sm-2 mb-sm-0"
         />
     <span>
-      <b-button variant="primary" @click="enregistrerModification">Modifier</b-button>
-      <b-button variant="danger" @click="annulerModification">Annuler</b-button>
+      <b-button variant="primary" type="submit" class="bouton primary" pill>Enregistrer</b-button>
+      <b-button variant="danger" @click="annulerModification" class="bouton danger" pill>Annuler</b-button>
     </span>
   </b-form>
 </template>
@@ -35,7 +38,8 @@ export default {
       this.edit = true
     //  this.$emit('modifier', 1)
     },
-    enregistrerModification(){
+    enregistrerModification(e){
+      e.preventDefault()
       this.$emit('modifier', {newName: this.newName})
       this.edit = false;
     },

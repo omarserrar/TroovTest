@@ -1,16 +1,22 @@
 <template>
-  <div class="container">
-    <div class="auth">
-      <div class="titre">{{titre}}</div>
-      <div v-if="login">
-        <login-form />
+  <div>
+    <navbar />
+    <div class="container">
+      <div class="auth">
+        <div class="titre">
+          {{ titre }}
+        </div>
+        <div v-if="login">
+          <login-form />
+        </div>
+        <div v-else>
+          <inscription-form />
+        </div>
+        <hr>
+        <a href="#" @click="showHideLoginForm()">
+          {{ buttonText }}
+        </a>
       </div>
-      <div v-else>
-        <inscription-form />
-      </div>
-      <button @click="showHideLoginForm()">
-        {{ buttonText }}
-      </button>
     </div>
   </div>
 </template>
@@ -33,11 +39,11 @@ export default {
     showHideLoginForm () {
       this.login = !this.login
       if (this.login) {
-        this.buttonText = this.buttonLogin;
-        this.titre = "Connexion"
+        this.buttonText = this.buttonLogin
+        this.titre = 'Connexion'
       } else {
-        this.buttonText = this.buttonSignup;
-        this.titre = "Inscription"
+        this.buttonText = this.buttonSignup
+        this.titre = 'Inscription'
       }
     }
   }

@@ -1,33 +1,46 @@
 <template>
   <div class="list">
     <b-form inline class="row formulaire" @submit="ajouterObjet">
+
       <label for="object-name" class="titre">Ajouter un objet: </label>
       <b-form-input
+        minlength="3"
+        maxlength="255"
         id="object-name"
         v-model="newObjetName"
         placeholder="Nom de l'objet"
       />
 
-      <b-button type="submit" variant="primary">
+      <b-button type="submit" variant="primary" pill class="bouton primary">
         Ajouter
       </b-button>
     </b-form>
-    <b-list-group>
+
+    <span class="titre">Liste des objets <b-badge variant="light">{{objets.length}}</b-badge></span>
+    <b-list-group v-if="objets.length && objets.length > 0">
       <b-list-group-item v-for="obj in objets">
         <objet :id="obj.id" :nom="obj.nom" @supprimer="supprimerObjet(obj)" @modifier="modifierObjet(obj, $event)" />
       </b-list-group-item>
     </b-list-group>
+    <div v-else align="center">
+      <img src="~/assets/no-data.png" fluid style="width: 70%" /><br>
+      <span> Aucun objet trouvé </span>
+    </div>
     <div>
+
       <b-modal ref="my-modal" hide-footer title="Attention">
         <div class="d-block text-center">
           <h3>Vous allez supprimer {{ selectedObjet.nom }}</h3>
         </div>
-        <b-button class="mt-3" variant="outline-danger" block @click="confirmeSuppression">
-          Confirmer
-        </b-button>
-        <b-button class="mt-2" variant="outline-warning" block @click="hideModal">
+        <hr>
+        <b-row align-h="around">
+        <b-col cols="4"><b-button class="mt-3" @click="hideModal">
           Annuler
-        </b-button>
+        </b-button></b-col>
+        <b-col cols="4"><b-button class="mt-3" variant="outline-danger" @click="confirmeSuppression">
+          Confirmer
+        </b-button></b-col>
+        </b-row>
       </b-modal>
     </div>
   </div>
