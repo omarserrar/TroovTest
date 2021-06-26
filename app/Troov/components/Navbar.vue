@@ -12,6 +12,7 @@
           <b-nav-item-dropdown right>
             <!-- Using 'button-content' slot -->
             <template #button-content>
+              <b-img v-bind="mainProps" rounded="circle" alt="Circle image" src="~/assets/user.png" height="30"></b-img>
               <em>{{$auth.user.nom}}</em>
             </template>
             <logout></logout>
