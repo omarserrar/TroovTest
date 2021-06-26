@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
 <template>
   <b-form @submit="onSubmit">
-    {{ error }}
+    <b-alert show variant="danger" v-if="error">{{ error }}</b-alert>
+
     <b-form-group
       id="email-group"
       label="Email address:"

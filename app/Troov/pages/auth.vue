@@ -29,9 +29,9 @@ export default {
   data () {
     return {
       login: true,
-      buttonLogin: 'Vous n\'avez pas encore de compte ? Créer le maintenant',
+      buttonLogin: 'Vous n\'avez pas encore de compte . Créez-le maintenant',
       buttonSignup: 'Vous avez déja un compte ? Connectez-vous',
-      buttonText: 'Vous n\'avez pas encore de compte ? Créer le maintenant',
+      buttonText: 'Vous n\'avez pas encore de compte . Créez-le maintenant',
       titre: 'Connexion'
     }
   },
