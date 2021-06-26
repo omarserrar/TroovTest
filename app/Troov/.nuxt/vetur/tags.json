@@ -14,6 +14,9 @@
   "Logout": {
     "description": "Auto imported from components/Logout.vue"
   },
+  "Navbar": {
+    "description": "Auto imported from components/Navbar.vue"
+  },
   "Objet": {
     "description": "Auto imported from components/Objet.vue"
   }

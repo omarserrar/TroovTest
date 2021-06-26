@@ -11,4 +11,5 @@ You can directly use them in pages and other components without the need to impo
 - `<LoginForm>` | `<login-form>` (components/LoginForm.vue)
 - `<Logo>` | `<logo>` (components/Logo.vue)
 - `<Logout>` | `<logout>` (components/Logout.vue)
+- `<Navbar>` | `<navbar>` (components/Navbar.vue)
 - `<Objet>` | `<objet>` (components/Objet.vue)

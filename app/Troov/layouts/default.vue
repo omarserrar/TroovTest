@@ -1,10 +1,21 @@
 <template>
   <div>
+    <navbar></navbar>
     <Nuxt />
   </div>
 </template>
-
+<script>
+import Navbar from '../components/Navbar.vue';
+export default {
+  components: {
+    Navbar
+  }
+}
+</script>
 <style>
+body{
+  background-color: #f3f3f3;
+}
 html {
   font-family:
     'Source Sans Pro',

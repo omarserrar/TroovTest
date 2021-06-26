@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <button @click="logout()">Déconnexion</button>
+  <div id="logout">
+    <b-dropdown-item @click="logout()" ><span id="logout"> Déconnexion</span></b-dropdown-item>
   </div>
 </template>
 
@@ -14,3 +14,8 @@ import LoginForm from '../components/LoginForm.vue'
     }
   }
 </script>
+<style>
+#logout{
+  color: red
+}
+</style>

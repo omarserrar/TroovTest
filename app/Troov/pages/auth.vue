@@ -1,14 +1,17 @@
 <template>
-  <div id="app">
-    <div v-if="login">
-      <login-form />
+  <div class="container">
+    <div class="auth">
+      <div class="titre">{{titre}}</div>
+      <div v-if="login">
+        <login-form />
+      </div>
+      <div v-else>
+        <inscription-form />
+      </div>
+      <button @click="showHideLoginForm()">
+        {{ buttonText }}
+      </button>
     </div>
-    <div v-else>
-      <inscription-form />
-    </div>
-    <button @click="showHideLoginForm()">
-      {{ buttonText }}
-    </button>
   </div>
 </template>
 <script>
@@ -22,15 +25,37 @@ export default {
       login: true,
       buttonLogin: 'Vous n\'avez pas encore de compte ? Créer le maintenant',
       buttonSignup: 'Vous avez déja un compte ? Connectez-vous',
-      buttonText: 'Vous n\'avez pas encore de compte ? Créer le maintenant'
+      buttonText: 'Vous n\'avez pas encore de compte ? Créer le maintenant',
+      titre: 'Connexion'
     }
   },
   methods: {
     showHideLoginForm () {
       this.login = !this.login
-      if (this.login) { this.buttonText = this.buttonLogin } else { this.buttonText = this.buttonSignup }
+      if (this.login) {
+        this.buttonText = this.buttonLogin;
+        this.titre = "Connexion"
+      } else {
+        this.buttonText = this.buttonSignup;
+        this.titre = "Inscription"
+      }
     }
   }
 
 }
 </script>
+<style>
+.auth{
+  padding: 0px 30px 30px 30px;
+  background: #fdfdfd;
+  margin-top: 12px;
+  border: #228674 solid 1px;
+  border-radius: 9px;
+}
+.titre{
+  padding-top: 12px;
+  color: #014d8e;
+  padding-bottom: 12px;
+  font-size: 20pt;
+}
+</style>

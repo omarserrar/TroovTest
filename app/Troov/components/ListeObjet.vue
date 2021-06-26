@@ -1,11 +1,10 @@
 <template>
-  <div>
-    <b-form inline @submit="ajouterObjet">
-      <label class="sr-only" for="object-name">Ajouter un objet: </label>
+  <div class="list">
+    <b-form inline class="row formulaire" @submit="ajouterObjet">
+      <label for="object-name" class="titre">Ajouter un objet: </label>
       <b-form-input
         id="object-name"
         v-model="newObjetName"
-        class="mb-2 mr-sm-2 mb-sm-0"
         placeholder="Nom de l'objet"
       />
 
@@ -33,7 +32,24 @@
     </div>
   </div>
 </template>
-
+<style>
+.formulaire{
+  border-bottom: black solid 2px;
+}
+.list{
+  padding: 0px 30px 30px 30px;
+  background: #fdfdfd;
+  margin-top: 12px;
+  border: #228674 solid 1px;
+  border-radius: 9px;
+}
+.titre{
+  padding-top: 12px;
+  color: #014d8e;
+  padding-bottom: 12px;
+  font-size: 20pt;
+}
+</style>
 <script>
 import Objet from './Objet.vue'
 export default {
@@ -72,14 +88,14 @@ export default {
     async confirmeSuppression () {
       const res = await this.$axios.post('/api/objet/delete', { objet: this.selectedObjet })
       if (res && res.data && res.data.success) {
-          this.objets = this.objets.filter(function (e) { return e !== this.selectedObjet }.bind(this))
+        this.objets = this.objets.filter(function (e) { return e !== this.selectedObjet }.bind(this))
       }
       this.hideModal()
     },
     async modifierObjet (obj, event) {
-      const res = await this.$axios.post('/api/objet/edit', { objet:{ _id: obj._id, nom: event.newName}})
+      const res = await this.$axios.post('/api/objet/edit', { objet: { _id: obj._id, nom: event.newName } })
       if (res && res.data && res.data.objet) {
-          obj.nom = res.data.objet.nom
+        obj.nom = res.data.objet.nom
       }
     },
     showModal () {

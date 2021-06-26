@@ -1,10 +1,6 @@
 <template>
   <div class="container">
     <div>
-      Welcome {{ $auth.user.nom }}
-      <logout />
-    </div>
-    <div>
       <liste-objet></liste-objet>
     </div>
   </div>
