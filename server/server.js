@@ -43,10 +43,10 @@ app.post('/api/objet/add', (req, res) => {
   console.log("Here")
   Auth.doIfConnected(req, res, ObjetController.ajouterObjet)
 })
-app.post('/api/objet/edit', (req, res) => {
+app.put('/api/objet/edit', (req, res) => {
   Auth.doIfConnected(req, res, ObjetController.modifierObjet)
 }) 
-app.post('/api/objet/delete', (req, res) => {
+app.delete('/api/objet/:id/delete', (req, res) => {
   Auth.doIfConnected(req, res, ObjetController.supprimerObjet)
 })
 app.get('/api/objet/list', (req, res) => {

@@ -39,12 +39,12 @@ module.exports = {
         
     },
     supprimerObjet: async function(req, res, user){
-        const v = new Validator(req.body.objet, {
-            _id: 'required',
+        const v = new Validator(req.params, {
+            id: 'required',
         });
         const matched = await v.check();
         if(matched){
-            Objet.findById(req.body.objet._id).remove().exec();
+            Objet.findById(req.params.id).remove().exec();
             res.json({success:true})
         }
         else{

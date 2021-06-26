@@ -1,7 +1,8 @@
-/* eslint-disable no-console */
 <template>
   <b-form @submit="onSubmit">
-    <b-alert show variant="danger" v-if="error">{{ error }}</b-alert>
+    <b-alert v-if="error" show variant="danger">
+      {{ error }}
+    </b-alert>
 
     <b-form-group
       id="email-group"
@@ -21,7 +22,7 @@
       <b-form-input
         id="password"
         v-model="form.password"
-        minLength="6"
+        min-length="6"
         type="password"
         placeholder="Enter password"
         required
@@ -50,15 +51,14 @@ export default {
       try {
         const res = await this.$auth.loginWith('local', { data: { form: this.form } })
         if (this.$auth.user) {
-          console.log('Success ', this.$auth.user)
           this.$router.push('/')
         } else if (res.data && res.data.error) {
           this.error = res.data.error
         } else {
-          console.log('Error')
+          this.error = 'Error'
         }
       } catch (err) {
-        console.log(err)
+        this.error = 'Error'
       }
     }
   }

@@ -36,7 +36,6 @@ export default {
       event.preventDefault()
       this.newName = this.$props.nom
       this.edit = true
-    //  this.$emit('modifier', 1)
     },
     enregistrerModification(e){
       e.preventDefault()

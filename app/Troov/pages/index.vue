@@ -12,11 +12,10 @@
 <script lang="ts">
 import Vue from 'vue'
 import ListeObjet from '../components/ListeObjet.vue'
-import Logout from '../components/Logout.vue'
 
 export default Vue.extend({
-  components: { Logout, ListeObjet },
-  middleware: ['auth']
+  components: { ListeObjet },
+  middleware: ['is-auth']
 })
 </script>
 
